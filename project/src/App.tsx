@@ -10,6 +10,9 @@ import { HomePage } from './pages/home-page';
 const GeneratorPage = lazy(() => import('./pages/generator-page').then((m) => ({ default: m.GeneratorPage })));
 const AboutPage = lazy(() => import('./pages/about-page').then((m) => ({ default: m.AboutPage })));
 const BlogPage = lazy(() => import('./pages/blog-page').then((m) => ({ default: m.BlogPage })));
+const BlogPostPage = lazy(() =>
+  import('./pages/blog-post-page').then((m) => ({ default: m.BlogPostPage }))
+);
 const ContactPage = lazy(() => import('./pages/contact-page').then((m) => ({ default: m.ContactPage })));
 const PrivacyPage = lazy(() => import('./pages/privacy-page').then((m) => ({ default: m.PrivacyPage })));
 const TermsPage = lazy(() => import('./pages/terms-page').then((m) => ({ default: m.TermsPage })));
@@ -42,6 +45,7 @@ export default function App() {
 <Route path="/vcard-qr-code-generator" element={<GeneratorPage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/blog" element={<BlogPage />} />
+                <Route path="/blog/:slug" element={<BlogPostPage />} />
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/privacy" element={<PrivacyPage />} />
                 <Route path="/terms" element={<TermsPage />} />
