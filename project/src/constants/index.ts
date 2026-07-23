@@ -294,7 +294,7 @@ Always place your QR Code where customers can easily notice it.
     description:
       'Learn how contrast, error correction and logo placement affect scannability — and how to design codes that look great and still work.',
     
-   image: '/images/qr-design.webp'
+   image: '/images/qr-design.webp',
     date: '2026-06-28',
     readTime: '5 min read',
     category: 'Design',
