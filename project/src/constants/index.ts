@@ -203,8 +203,8 @@ export const BLOG_POSTS: BlogPost[] = [
     title: 'The Complete Guide to QR Codes in 2026',
     description:
       'Everything you need to know about QR codes — from the different types to best practices for design and scanning reliability.',
-    image:
-      'https://images.pexels.com/photos/6141172/pexels-photo-6141172.jpeg?auto=compress&cs=tinysrgb&w=800',
+    
+   image: '/images/qr-guide.webp',
     date: '2026-07-10',
     readTime: '8 min read',
     category: 'QR Guides',
@@ -256,8 +256,8 @@ QR Codes are simple, fast, and incredibly useful. They improve customer experien
     title: 'How Small Businesses Use QR Codes to Grow',
     description:
       'Discover five practical ways local businesses are using QR codes to boost engagement, collect reviews and drive sales.',
-    image:
-      'https://images.pexels.com/photos/5077047/pexels-photo-5077047.jpeg?auto=compress&cs=tinysrgb&w=800',
+    
+    image: '/images/qr-business.webp',
     date: '2026-07-05',
     readTime: '6 min read',
     category: 'Small Business',
@@ -293,8 +293,8 @@ Always place your QR Code where customers can easily notice it.
     title: 'QR Code Design Best Practices for Maximum Scans',
     description:
       'Learn how contrast, error correction and logo placement affect scannability — and how to design codes that look great and still work.',
-    image:
-      'https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=800',
+    
+   image: '/images/qr-design.webp'
     date: '2026-06-28',
     readTime: '5 min read',
     category: 'Design',
