@@ -201,26 +201,123 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     slug: 'complete-guide-to-qr-codes',
     title: 'The Complete Guide to QR Codes in 2026',
-    description: 'Everything you need to know about QR codes — from the different types to best practices for design and scanning reliability.',
-    image: 'https://images.pexels.com/photos/6141172/pexels-photo-6141172.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description:
+      'Everything you need to know about QR codes — from the different types to best practices for design and scanning reliability.',
+    image:
+      'https://images.pexels.com/photos/6141172/pexels-photo-6141172.jpeg?auto=compress&cs=tinysrgb&w=800',
     date: '2026-07-10',
     readTime: '8 min read',
+    category: 'QR Guides',
+    author: 'FreeQRHub Team',
+    keywords: [
+      'QR Code',
+      'QR Guide',
+      'Business QR',
+      'QR Marketing',
+      'QR Design',
+    ],
+    content: `
+QR Codes have become one of the easiest ways to connect the offline world with the online world.
+
+Whether you own a local business, restaurant, online store, or personal brand, QR codes help customers instantly access websites, contact information, menus, payment pages, and much more.
+
+## What is a QR Code?
+
+A QR Code (Quick Response Code) is a two-dimensional barcode that stores digital information. Modern smartphones can scan QR codes directly using the built-in camera.
+
+## Common Uses
+
+• Website links
+• Google Reviews
+• Restaurant menus
+• Business cards
+• WiFi sharing
+• Payment links
+• Event tickets
+
+## Best Practices
+
+Always use high contrast colors.
+
+Leave enough white space around the code.
+
+Test every QR code before printing.
+
+For printed materials, SVG format provides the best quality.
+
+## Final Thoughts
+
+QR Codes are simple, fast, and incredibly useful. They improve customer experience while making your marketing more effective.
+`,
   },
+
   {
     slug: 'qr-codes-for-small-business',
     title: 'How Small Businesses Use QR Codes to Grow',
-    description: 'Discover five practical ways local businesses are using QR codes to boost engagement, collect reviews and drive sales.',
-    image: 'https://images.pexels.com/photos/5077047/pexels-photo-5077047.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description:
+      'Discover five practical ways local businesses are using QR codes to boost engagement, collect reviews and drive sales.',
+    image:
+      'https://images.pexels.com/photos/5077047/pexels-photo-5077047.jpeg?auto=compress&cs=tinysrgb&w=800',
     date: '2026-07-05',
     readTime: '6 min read',
+    category: 'Small Business',
+    author: 'FreeQRHub Team',
+    keywords: [
+      'Small Business',
+      'Marketing',
+      'QR Code Business',
+      'Google Reviews',
+    ],
+    content: `
+Small businesses are using QR Codes everywhere.
+
+Instead of printing long URLs, businesses simply place QR codes on:
+
+• Business Cards
+• Flyers
+• Store Windows
+• Menus
+• Packaging
+• Receipts
+
+Customers scan once and instantly reach your website, review page or contact information.
+
+QR Codes save time while increasing engagement and conversions.
+
+Always place your QR Code where customers can easily notice it.
+`,
   },
+
   {
     slug: 'qr-code-design-best-practices',
     title: 'QR Code Design Best Practices for Maximum Scans',
-    description: 'Learn how contrast, error correction and logo placement affect scannability — and how to design codes that look great and still work.',
-    image: 'https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=800',
+    description:
+      'Learn how contrast, error correction and logo placement affect scannability — and how to design codes that look great and still work.',
+    image:
+      'https://images.pexels.com/photos/4968391/pexels-photo-4968391.jpeg?auto=compress&cs=tinysrgb&w=800',
     date: '2026-06-28',
     readTime: '5 min read',
+    category: 'Design',
+    author: 'FreeQRHub Team',
+    keywords: [
+      'QR Design',
+      'QR Color',
+      'Logo QR',
+      'Scan Quality',
+    ],
+    content: `
+A beautiful QR Code is useless if it doesn't scan properly.
+
+Here are the most important design tips.
+
+• Use dark foreground with light background.
+• Leave a proper quiet zone around the QR Code.
+• Keep logos under 30% of the total area.
+• Always test on Android and iPhone.
+• Download SVG for printing.
+
+Following these simple rules will dramatically improve scan success rates.
+`,
   },
 ];
 
