@@ -77,13 +77,13 @@ export function Footer() {
           {/* Newsletter */}
           <div>
             <h3 className="text-sm font-semibold text-secondary-900">Newsletter</h3>
-            <p className="mt-4 text-sm text-secondary-500">Get QR tips and product updates.</p>
+            <p className="mt-4 text-sm text-secondary-500">Subscribe to receive QR code tips, updates, and new features.</p>
             <form onSubmit={handleSubscribe} className="mt-3 flex gap-2">
               <Input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="you@example.com"
+               placeholder="Enter your email address"
                 aria-label="Email address"
                 className="h-10"
               />
