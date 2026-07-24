@@ -87,7 +87,7 @@ const schema = {
     "price": "0",
     "priceCurrency": "USD"
   },
-  "url": `https://freeqrhub.com${CANONICAL_PATHS[initialType]}`
+  "url": `https://freeqrhub-project.vercel.app${CANONICAL_PATHS[initialType]}`
 };
 
   useSeo({

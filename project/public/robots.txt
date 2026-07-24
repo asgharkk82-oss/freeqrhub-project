@@ -2,4 +2,4 @@ User-agent: *
 
 Allow: /
 
-Sitemap: https://freeqrhub.com/sitemap.xml
+Sitemap: https://freeqrhub-project.vercel.app/sitemap.xml

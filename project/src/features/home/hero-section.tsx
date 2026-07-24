@@ -5,7 +5,7 @@ import { Button } from '../../components/ui/button';
 import { LazyQrPreview } from '../../components/common/lazy-qr-preview';
 import { TRUST_INDICATORS, DEFAULT_CUSTOMIZATION } from '../../constants';
 
-const DEMO_CONTENT = 'https://freeqrhub.com';
+const DEMO_CONTENT = 'https://freeqrhub-project.vercel.app';
 
 export function HeroSection() {
   return (
