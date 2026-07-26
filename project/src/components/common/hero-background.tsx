@@ -4,16 +4,16 @@ export function HeroBackground() {
   return (
     <div
      
-  className="absolute inset-0 max-w-full overflow-hidden pointer-events-none"
+
+  className="absolute inset-0 w-full overflow-hidden pointer-events-none"
   aria-hidden="true"
 >
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
 
       <motion.div
-        animate={{
-          x: [0, 40, 0],
-          y: [0, -30, 0],
-        }}
+       animate={{
+ y: [0, -30, 0],
+}}
         transition={{
           duration: 12,
           repeat: Infinity,
@@ -23,10 +23,9 @@ export function HeroBackground() {
       />
 
       <motion.div
-        animate={{
-          x: [0, -40, 0],
-          y: [0, 40, 0],
-        }}
+       animate={{
+ y: [0, 40, 0],
+}}
         transition={{
           duration: 15,
           repeat: Infinity,

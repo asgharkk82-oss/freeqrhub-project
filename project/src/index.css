@@ -16,9 +16,10 @@
   }
 
   body {
-    @apply bg-white text-secondary-800 font-sans antialiased;
-    line-height: 1.6;
-  }
+  @apply bg-white text-secondary-800 font-sans antialiased;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-display text-secondary-900;
