@@ -11,7 +11,7 @@ const DEMO_CONTENT = 'https://freeqrhub-project.vercel.app';
 export function HeroSection() {
   return (
     <section className="relative overflow-x-hidden overflow-y-visible bg-gradient-hero">
-      <HeroBackground />
+     {/*  <HeroBackground /> */}
       <div className="container-base relative w-full max-w-full overflow-hidden px-4 py-20 sm:px-6 lg:py-32 xl:py-40">
         <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
           {/* Left: Copy */}
