@@ -3,9 +3,10 @@ import { motion } from "framer-motion";
 export function HeroBackground() {
   return (
     <div
-      className="absolute inset-0 overflow-hidden pointer-events-none"
-      aria-hidden="true"
-    >
+     
+  className="absolute inset-0 max-w-full overflow-hidden pointer-events-none"
+  aria-hidden="true"
+>
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
 
       <motion.div

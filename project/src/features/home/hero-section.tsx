@@ -12,7 +12,7 @@ export function HeroSection() {
   return (
     <section className="relative overflow-x-hidden overflow-y-visible bg-gradient-hero">
       <HeroBackground />
-      <div className="container-base relative py-20 lg:py-32 xl:py-40">
+      <div className="container-base relative w-full max-w-full overflow-hidden px-4 py-20 sm:px-6 lg:py-32 xl:py-40">
         <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
           {/* Left: Copy */}
           <div className="text-center lg:text-left">
@@ -41,7 +41,7 @@ Online in Seconds
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-             className="mx-auto mt-6 max-w-xl px-2 text-base sm:text-lg leading-7 text-secondary-500 lg:mx-0"
+            className="mx-auto mt-6 w-full max-w-xl px-4 text-base leading-7 text-secondary-500 sm:text-lg lg:mx-0"
             >
              Generate free QR codes for URLs, WiFi, PDF, Business Cards, Social Media and more. Customize colors, logos and styles, then download high-quality QR codes in seconds. No signup required.
             </motion.p>
