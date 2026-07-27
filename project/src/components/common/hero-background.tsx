@@ -5,7 +5,7 @@ export function HeroBackground() {
     <div
      
 
-  className="absolute inset-0 w-full overflow-hidden pointer-events-none"
+ className="absolute inset-0 w-full overflow-hidden pointer-events-none select-none"
   aria-hidden="true"
 >
       <div className="absolute inset-0 bg-grid-pattern opacity-30" />
@@ -19,7 +19,7 @@ export function HeroBackground() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute -top-32 -left-32 h-96 w-96 rounded-full bg-primary-300/20 blur-3xl"
+       className="absolute -top-32 -left-32 h-72 w-72 sm:h-80 sm:w-80 lg:h-96 lg:w-96 rounded-full bg-primary-300/20 blur-3xl"
       />
 
       <motion.div
@@ -31,7 +31,7 @@ export function HeroBackground() {
           repeat: Infinity,
           ease: "easeInOut",
         }}
-        className="absolute top-1/3 -right-24 h-80 w-80 rounded-full bg-accent-300/20 blur-3xl"
+       className="absolute top-1/3 -right-20 h-64 w-64 sm:h-72 sm:w-72 lg:-right-24 lg:h-80 lg:w-80 rounded-full bg-accent-300/20 blur-3xl"
       />
 
       <motion.div

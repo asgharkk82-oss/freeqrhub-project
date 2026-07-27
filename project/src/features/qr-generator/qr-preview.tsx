@@ -33,6 +33,7 @@ export function QrPreview({ content, customization, className }: QrPreviewProps)
     container.innerHTML = '';
     qrRef.current.append(container);
     return () => {
+      qrRef.current = null;
       container.innerHTML = '';
     };
   }, [content, customization]);
@@ -45,7 +46,7 @@ export function QrPreview({ content, customization, className }: QrPreviewProps)
     >
       <div
         ref={containerRef}
-        className="overflow-hidden rounded-xl"
+       className="overflow-hidden rounded-xl will-change-transform"
         style={{ backgroundColor: customization.backgroundColor }}
       />
     </div>

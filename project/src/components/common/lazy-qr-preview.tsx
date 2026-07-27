@@ -13,8 +13,8 @@ export function LazyQrPreview({ content, customization = DEFAULT_CUSTOMIZATION, 
   return (
     <Suspense
       fallback={
-        <div className="flex h-full w-full items-center justify-center">
-          <div className="h-8 w-8 animate-spin rounded-full border-2 border-secondary-200 border-t-primary-600" />
+        <div className="flex h-full min-h-[220px] w-full items-center justify-center">
+         <div className="h-10 w-10 animate-spin rounded-full border-[3px] border-secondary-200 border-t-primary-600" />
         </div>
       }
     >

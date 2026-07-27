@@ -36,12 +36,12 @@ export function createQrCode({ content, customization, sizeOverride }: CreateQrO
   const options: Options = {
     width: size,
     height: size,
-   type: 'svg',
-   data: content,
+    type: 'svg',
+    data: content,
     margin: customization.margin,
-   qrOptions: {
-  errorCorrectionLevel: 'M',
-},
+    qrOptions: {
+      errorCorrectionLevel: 'M',
+    },
     dotsOptions: {
       color: customization.foregroundColor,
       ...dotTypeMap[customization.dotStyle],

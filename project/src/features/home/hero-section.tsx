@@ -10,12 +10,12 @@ const DEMO_CONTENT = 'https://freeqrhub-project.vercel.app';
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-x-hidden overflow-y-visible bg-gradient-hero">
+    <section className="relative overflow-x-hidden overflow-y-visible bg-gradient-hero isolate">
       <HeroBackground />
-      <div className="container-base relative w-full max-w-full overflow-hidden px-4 py-20 sm:px-6 lg:py-32 xl:py-40">
-        <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
+     <div className="container-base relative z-10 w-full max-w-full overflow-hidden px-5 py-16 sm:px-6 sm:py-20 lg:py-32 xl:py-40">
+        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
           {/* Left: Copy */}
-          <div className="text-center lg:text-left">
+          <div className="order-2 text-center lg:order-1 lg:text-left">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -30,7 +30,7 @@ export function HeroSection() {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.05 }}
-             className="mt-6 text-3xl font-extrabold tracking-tight text-secondary-900 sm:text-5xl lg:text-7xl leading-tight break-words"
+            className="mt-6 text-4xl font-extrabold leading-tight tracking-tight text-secondary-900 break-words sm:text-5xl lg:text-7xl"
             >
              Create Free{' '}
 <span className="text-gradient">QR Codes</span>{' '}
@@ -41,38 +41,38 @@ Online in Seconds
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.15 }}
-            className="mx-auto mt-6 w-full max-w-xl px-4 text-base leading-7 text-secondary-500 sm:text-lg lg:mx-0"
+            className="mx-auto mt-6 w-full max-w-xl px-1 text-base leading-7 text-secondary-500 sm:px-4 sm:text-lg lg:mx-0 lg:px-0"
             >
              Generate free QR codes for URLs, WiFi, PDF, Business Cards, Social Media and more. Customize colors, logos and styles, then download high-quality QR codes in seconds. No signup required.
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.25 }}
-             className="mt-10 flex w-full flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, delay: 0.25 }}
+  className="mt-10 flex w-full flex-col gap-4 sm:flex-row sm:justify-center lg:justify-start"
 >
-                <Link to="/generator">
-  <Button
-  size="xl"
-  className="w-full sm:w-auto sm:min-w-[220px] shadow-lg hover:shadow-xl transition-all duration-300"
->
-    <QrCodeIcon className="h-5 w-5" />
-    Generate Free QR Code
-  </Button>
-</Link>
+  <Link to="/generator" className="w-full sm:w-auto">
+    <Button
+      size="xl"
+      className="w-full sm:w-auto sm:min-w-[220px] shadow-lg transition-all duration-300 hover:shadow-xl"
+    >
+      <QrCodeIcon className="h-5 w-5" />
+      Generate Free QR Code
+    </Button>
+  </Link>
 
-<Link to="/#features">
-  <Button
-  variant="outline"
-  size="xl"
-  className="w-full sm:w-auto sm:min-w-[220px]"
->
-    Explore Features
-    <ArrowRight className="h-4 w-4" />
-  </Button>
-</Link>         
-            </motion.div>
+  <Link to="/#features" className="w-full sm:w-auto">
+    <Button
+      variant="outline"
+      size="xl"
+      className="w-full sm:w-auto sm:min-w-[220px]"
+    >
+      Explore Features
+      <ArrowRight className="h-4 w-4" />
+    </Button>
+  </Link>
+</motion.div>
 
             {/* Trust indicators */}
             <motion.ul
@@ -99,7 +99,7 @@ Online in Seconds
             initial={{ opacity: 0, scale: 0.9, y: 30 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
-            className="relative mx-auto w-full max-w-md lg:max-w-none"
+           className="order-1 relative mx-auto w-full max-w-sm sm:max-w-md lg:order-2 lg:max-w-none"
           >
             <motion.div
   animate={{ y: [0, -8, 0] }}
@@ -120,16 +120,18 @@ Online in Seconds
 </p>
 </motion.div>
             <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-primary-200/30 to-accent-200/30 blur-2xl" aria-hidden="true" />
-            <div className="relative overflow-hidden rounded-3xl border border-white/40 bg-white/90 p-6 shadow-2xl backdrop-blur-xl">
+            <div className="relative overflow-hidden rounded-3xl border border-white/40 bg-white/90 p-5 shadow-2xl backdrop-blur-xl sm:p-6">
               <div className="mb-4 flex items-center justify-between">
                 <div className="flex items-center gap-2">
                   <span className="h-3 w-3 rounded-full bg-error/40" />
                   <span className="h-3 w-3 rounded-full bg-warning/40" />
                   <span className="h-3 w-3 rounded-full bg-success/40" />
                 </div>
-                <span className="text-xs font-medium text-secondary-400">freeqrhub.com</span>
+                <span className="truncate text-xs font-medium text-secondary-400">
+  freeqrhub.com
+</span>
               </div>
-              <div className="relative flex aspect-square items-center justify-center rounded-2xl bg-gradient-to-br from-slate-50 via-white to-primary-50 p-8">
+              <div className="relative flex aspect-square items-center justify-center rounded-2xl bg-gradient-to-br from-slate-50 via-white to-primary-50 p-5 sm:p-8">
                 <LazyQrPreview
                   content={DEMO_CONTENT}
                   customization={DEFAULT_CUSTOMIZATION}
