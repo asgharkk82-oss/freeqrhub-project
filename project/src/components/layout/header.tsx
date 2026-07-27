@@ -57,20 +57,14 @@ export function Header() {
         </ul>
 
         {/* Desktop CTA */}
-        <div className="hidden items-center gap-3 lg:flex">
-          <Link
-            to="/generator"
-            className="hidden text-sm font-medium text-secondary-600 transition-colors hover:text-secondary-900 xl:inline-flex"
-          >
-            Sign In
-          </Link>
-          <Link to="/generator">
-            <Button size="sm">
-              <QrCodeIcon className="h-4 w-4" />
-              Generate QR Code
-            </Button>
-          </Link>
-        </div>
+        <div className="hidden items-center lg:flex">
+  <Link to="/generator">
+    <Button size="sm">
+      <QrCodeIcon className="h-4 w-4" />
+      Generate QR Code
+    </Button>
+  </Link>
+</div>
 
         {/* Mobile toggle */}
         <button
