@@ -1,6 +1,7 @@
 import { useSearchParams, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ShieldCheck, Zap, Gift } from 'lucide-react';
+
+
 import { QrGenerator } from '../features/qr-generator/qr-generator';
 import { useSeo } from '../hooks/useSeo';
 import type { QrTypeId } from '../types';
@@ -90,43 +91,60 @@ const schema = {
   "url": `https://freeqrhub-project.vercel.app${CANONICAL_PATHS[initialType]}`
 };
 
-  useSeo({
-    title: SEO_CONTENT[initialType].title,
-    description: SEO_CONTENT[initialType].description,
-   canonical: CANONICAL_PATHS[initialType],
-   schema,
-  });
+useSeo({
+  title: SEO_CONTENT[initialType].title,
+  description: SEO_CONTENT[initialType].description,
+  canonical: CANONICAL_PATHS[initialType],
+  schema,
+});
 
-  return (
-    <div className="bg-gradient-hero">
-      <div className="container-base py-10 lg:py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-          className="mb-8 text-center"
-        >
-          <h1 className="text-display-sm font-bold tracking-tight text-secondary-900 sm:text-display-md">
-  {SEO_CONTENT[initialType].title.replace(' | FreeQRHub', '')}
-</h1>
-          <p className="mx-auto mt-3 max-w-2xl text-base text-secondary-500 sm:text-lg text-balance">
-  {SEO_CONTENT[initialType].description}
-</p>
-          <div className="mt-5 flex flex-wrap items-center justify-center gap-4 text-sm text-secondary-500">
-            <span className="inline-flex items-center gap-1.5">
-              <Gift className="h-4 w-4 text-accent-500" /> 100% Free
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <Zap className="h-4 w-4 text-warning" /> Instant
-            </span>
-            <span className="inline-flex items-center gap-1.5">
-              <ShieldCheck className="h-4 w-4 text-success" /> Private
-            </span>
-          </div>
-        </motion.div>
+return (
+  <motion.div
+    initial={{ opacity: 0, y: 16 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.4 }}
+    className="mb-8 text-center"
+  >
+    <QrGenerator initialType={initialType} />
 
-        <QrGenerator initialType={initialType} />
-      </div>
-    </div>
-  );
+    {initialType === 'wifi' && (
+      <section className="mx-auto mt-12 max-w-4xl px-4 text-left">
+        <h2 className="text-2xl font-bold text-secondary-900">
+          What Is a WiFi QR Code?
+        </h2>
+
+        <p className="mt-4 text-base leading-7 text-secondary-600">
+          A WiFi QR code lets people connect to a wireless network by scanning
+          a QR code instead of manually entering the network name and password.
+          FreeQRHub makes it easy to create a WiFi QR code instantly and share
+          it with guests, customers, friends, or family.
+        </p>
+
+        <h2 className="mt-10 text-2xl font-bold text-secondary-900">
+          How to Create a WiFi QR Code
+        </h2>
+
+        <ol className="mt-4 list-decimal space-y-3 pl-6 text-base leading-7 text-secondary-600">
+          <li>Enter your WiFi network name (SSID).</li>
+          <li>Enter your WiFi password.</li>
+          <li>Select the correct security type.</li>
+          <li>Choose whether your network is hidden.</li>
+          <li>Generate your WiFi QR code.</li>
+          <li>Download your QR code and share it with others.</li>
+        </ol>
+
+        <h2 className="mt-10 text-2xl font-bold text-secondary-900">
+          Why Use a WiFi QR Code?
+        </h2>
+
+        <p className="mt-4 text-base leading-7 text-secondary-600">
+          WiFi QR codes make sharing wireless access faster and more convenient.
+          Instead of reading or typing a long password, guests can simply scan
+          the code with their phone and connect to the network.
+        </p>
+      </section>
+    )}
+  </motion.div>
+);
 }
+
