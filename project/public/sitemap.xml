@@ -61,6 +61,10 @@
     <loc>https://freeqrhub-project.vercel.app/blog</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+  <loc>https://freeqrhub-project.vercel.app/blog/how-to-create-a-qr-code-for-a-website</loc>
+  <priority>0.8</priority>
+</url>
 
   <url>
     <loc>https://freeqrhub-project.vercel.app/contact</loc>
