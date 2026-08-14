@@ -43,6 +43,11 @@ export default function App() {
 <Route path="/email-qr-code-generator" element={<GeneratorPage />} />
 <Route path="/url-qr-code-generator" element={<GeneratorPage />} />
 <Route path="/vcard-qr-code-generator" element={<GeneratorPage />} />
+<Route path="/phone-qr-code-generator" element={<GeneratorPage />} />
+<Route path="/sms-qr-code-generator" element={<GeneratorPage />} />
+<Route path="/location-qr-code-generator" element={<GeneratorPage />} />
+<Route path="/text-qr-code-generator" element={<GeneratorPage />} />
+
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/blog/:slug" element={<BlogPostPage />} />
