@@ -8,6 +8,8 @@ import type {
   UrlFormData,
   VCardFormData,
   WifiFormData,
+  SocialMediaFormData,
+  PaymentFormData,
 } from '../types';
 
 function escapeWifi(value: string = ''): string {
@@ -16,7 +18,11 @@ function escapeWifi(value: string = ''): string {
 
 function ensureUrlScheme(url: string): string {
   if (!url) return '';
-  if (/^https?:\/\//i.test(url)) return url;
+
+  if (/^https?:\/\//i.test(url)) {
+    return url;
+  }
+
   return `https://${url}`;
 }
 
@@ -24,20 +30,32 @@ export function buildQrContent(type: QrTypeId, data: QrFormData): string {
   switch (type) {
     case 'url': {
       const { url = '' } = data as Partial<UrlFormData>;
+
       return ensureUrlScheme(url.trim());
     }
 
     case 'text': {
       const { text = '' } = data as { text?: string };
+
       return text.trim();
     }
 
     case 'email': {
-      const { email = '', subject = '', message = '' } = data as Partial<EmailFormData>;
+      const {
+        email = '',
+        subject = '',
+        message = '',
+      } = data as Partial<EmailFormData>;
 
       const params = new URLSearchParams();
-      if (subject) params.set('subject', subject);
-      if (message) params.set('body', message);
+
+      if (subject) {
+        params.set('subject', subject);
+      }
+
+      if (message) {
+        params.set('body', message);
+      }
 
       const query = params.toString();
 
@@ -46,14 +64,21 @@ export function buildQrContent(type: QrTypeId, data: QrFormData): string {
 
     case 'phone': {
       const { phone = '' } = data as Partial<PhoneFormData>;
+
       return `tel:${phone.trim()}`;
     }
 
     case 'sms': {
-      const { phone = '', message = '' } = data as Partial<SmsFormData>;
+      const {
+        phone = '',
+        message = '',
+      } = data as Partial<SmsFormData>;
 
       const params = new URLSearchParams();
-      if (message) params.set('body', message);
+
+      if (message) {
+        params.set('body', message);
+      }
 
       const query = params.toString();
 
@@ -71,7 +96,9 @@ export function buildQrContent(type: QrTypeId, data: QrFormData): string {
       const t = security === 'nopass' ? 'nopass' : security;
       const p = security === 'nopass' ? '' : escapeWifi(password);
 
-      return `WIFI:T:${t};S:${escapeWifi(ssid)};P:${p};${hidden ? 'H:true;' : ''};`;
+      return `WIFI:T:${t};S:${escapeWifi(ssid)};P:${p};${
+        hidden ? 'H:true;' : ''
+      };`;
     }
 
     case 'vcard': {
@@ -85,11 +112,25 @@ export function buildQrContent(type: QrTypeId, data: QrFormData): string {
 
       const lines = ['BEGIN:VCARD', 'VERSION:3.0'];
 
-      if (name) lines.push(`FN:${name}`);
-      if (company) lines.push(`ORG:${company}`);
-      if (phone) lines.push(`TEL:${phone}`);
-      if (email) lines.push(`EMAIL:${email}`);
-      if (website) lines.push(`URL:${ensureUrlScheme(website)}`);
+      if (name) {
+        lines.push(`FN:${name}`);
+      }
+
+      if (company) {
+        lines.push(`ORG:${company}`);
+      }
+
+      if (phone) {
+        lines.push(`TEL:${phone}`);
+      }
+
+      if (email) {
+        lines.push(`EMAIL:${email}`);
+      }
+
+      if (website) {
+        lines.push(`URL:${ensureUrlScheme(website)}`);
+      }
 
       lines.push('END:VCARD');
 
@@ -97,9 +138,33 @@ export function buildQrContent(type: QrTypeId, data: QrFormData): string {
     }
 
     case 'location': {
-      const { latitude = '', longitude = '' } = data as Partial<LocationFormData>;
+      const {
+        latitude = '',
+        longitude = '',
+      } = data as Partial<LocationFormData>;
 
       return `geo:${latitude.trim()},${longitude.trim()}`;
+    }
+
+    // Social media QR codes
+    case 'instagram':
+    case 'facebook':
+    case 'whatsapp':
+    case 'youtube':
+    case 'tiktok':
+    case 'linkedin':
+    case 'twitter':
+    case 'pinterest': {
+      const { url = '' } = data as Partial<SocialMediaFormData>;
+
+      return ensureUrlScheme(url.trim());
+    }
+
+    // Payment QR code
+    case 'payment': {
+      const { url = '' } = data as Partial<PaymentFormData>;
+
+      return ensureUrlScheme(url.trim());
     }
 
     default:
@@ -107,6 +172,9 @@ export function buildQrContent(type: QrTypeId, data: QrFormData): string {
   }
 }
 
-export function hasContent(type: QrTypeId, data: QrFormData): boolean {
+export function hasContent(
+  type: QrTypeId,
+  data: QrFormData,
+): boolean {
   return buildQrContent(type, data).length > 0;
 }

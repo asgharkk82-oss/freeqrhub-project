@@ -23,8 +23,18 @@ export const QR_TYPES: QrTypeDefinition[] = [
   { id: 'wifi', title: 'WiFi', description: 'Network credentials', iconName: 'Wifi' },
   { id: 'vcard', title: 'vCard', description: 'Contact card', iconName: 'Contact' },
   { id: 'location', title: 'Location', description: 'GPS coordinates', iconName: 'MapPin' },
-];
 
+  { id: 'instagram', title: 'Instagram', description: 'Instagram profile', iconName: 'Instagram' },
+  { id: 'facebook', title: 'Facebook', description: 'Facebook profile', iconName: 'Facebook' },
+  { id: 'whatsapp', title: 'WhatsApp', description: 'WhatsApp contact', iconName: 'MessageCircle' },
+  { id: 'youtube', title: 'YouTube', description: 'YouTube channel', iconName: 'Youtube' },
+  { id: 'tiktok', title: 'TikTok', description: 'TikTok profile', iconName: 'Music2' },
+  { id: 'linkedin', title: 'LinkedIn', description: 'LinkedIn profile', iconName: 'Linkedin' },
+  { id: 'twitter', title: 'X / Twitter', description: 'X / Twitter profile', iconName: 'Twitter' },
+  { id: 'pinterest', title: 'Pinterest', description: 'Pinterest profile', iconName: 'Pin' },
+
+  { id: 'payment', title: 'Payment', description: 'Payment link', iconName: 'CreditCard' },
+];
 export const DEFAULT_CUSTOMIZATION: QrCustomization = {
   foregroundColor: '#0F172A',
   backgroundColor: '#FFFFFF',

@@ -6,7 +6,16 @@ export type QrTypeId =
   | 'sms'
   | 'wifi'
   | 'vcard'
-  | 'location';
+  | 'location'
+  | 'instagram'
+  | 'facebook'
+  | 'whatsapp'
+  | 'youtube'
+  | 'tiktok'
+  | 'linkedin'
+  | 'twitter'
+  | 'pinterest'
+  | 'payment';
 
 export interface QrTypeDefinition {
   id: QrTypeId;
@@ -58,6 +67,14 @@ export interface LocationFormData {
   longitude: string;
 }
 
+export interface SocialMediaFormData {
+  url: string;
+}
+
+export interface PaymentFormData {
+  url: string;
+}
+
 export type QrFormData =
   | UrlFormData
   | TextFormData
@@ -66,7 +83,9 @@ export type QrFormData =
   | SmsFormData
   | WifiFormData
   | VCardFormData
-  | LocationFormData;
+  | LocationFormData
+  | SocialMediaFormData
+  | PaymentFormData;
 
 export type DotStyle = 'square' | 'rounded' | 'circle';
 export type CornerStyle = 'square' | 'rounded';
@@ -116,11 +135,9 @@ export interface BlogPost {
   image: string;
   date: string;
   readTime: string;
-
   content: string;
   category: string;
   author: string;
-
   keywords?: string[];
 }
 
