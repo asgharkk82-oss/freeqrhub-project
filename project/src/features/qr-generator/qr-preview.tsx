@@ -3,7 +3,7 @@ import QRCodeStyling from 'qr-code-styling';
 import type { QrCustomization } from '../../types';
 import { SIZE_PIXELS } from '../../constants';
 import { createQrCode } from '../../services/qr-generator';
-import QRCode from 'qrcode';
+
 import { cn } from '../../lib/utils';
 
 interface QrPreviewProps {
@@ -40,13 +40,13 @@ export function QrPreview({ content, customization, className }: QrPreviewProps)
 
   return (
     <div
-      className={cn('flex items-center justify-center', className)}
+     className={cn('flex h-full w-full min-w-0 max-w-full items-center justify-center overflow-hidden', className)}
       role="img"
       aria-label={content ? 'QR code preview' : 'QR code preview placeholder'}
     >
       <div
         ref={containerRef}
-       className="overflow-hidden rounded-xl will-change-transform"
+      className="h-full w-full max-w-full max-h-full overflow-hidden rounded-xl will-change-transform"
         style={{ backgroundColor: customization.backgroundColor }}
       />
     </div>

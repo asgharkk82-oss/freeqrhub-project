@@ -32,9 +32,9 @@ export default function App() {
       <ScrollToTop />
       <ScrollToHash />
       <ErrorBoundary>
-        <div className="flex min-h-screen flex-col">
+       <div className="flex min-h-screen min-w-0 max-w-full flex-col overflow-x-hidden">
           <Header />
-          <main className="flex-1">
+         <main className="min-w-0 max-w-full flex-1 overflow-x-hidden">
             <Suspense fallback={<PageLoader />}>
               <Routes>
                 <Route path="/" element={<HomePage />} />

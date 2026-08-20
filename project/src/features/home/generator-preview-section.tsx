@@ -17,6 +17,15 @@ const SAMPLE_DATA: Record<QrTypeId, string> = {
   wifi: 'WIFI:T:WPA;S:MyNetwork;P:mypassword;;',
   vcard: 'BEGIN:VCARD\nVERSION:3.0\nFN:John Doe\nORG:Acme\nEND:VCARD',
   location: 'geo:40.7128,-74.0060',
+  instagram: 'https://instagram.com/freeqrhub',
+  facebook: 'https://facebook.com/freeqrhub',
+  whatsapp: 'https://wa.me/15551234567',
+  youtube: 'https://youtube.com/@freeqrhub',
+  tiktok: 'https://tiktok.com/@freeqrhub',
+  linkedin: 'https://linkedin.com/in/freeqrhub',
+  twitter: 'https://x.com/freeqrhub',
+  pinterest: 'https://pinterest.com/freeqrhub',
+  payment: 'https://example.com/payment',
 };
 
 export function GeneratorPreviewSection() {
@@ -29,7 +38,7 @@ export function GeneratorPreviewSection() {
         <SectionHeading
           eyebrow="Try It Now"
           title="Generate Your QR Code in Seconds"
-          description="Pick a type, enter your content and watch your QR code appear instantly. No reloads, no waiting."
+          description="Create a free QR code instantly by choosing a QR type, entering your content, and previewing your QR code in seconds. No signup required."
         />
 
         <div className="mx-auto mt-12 max-w-4xl">
@@ -38,7 +47,7 @@ export function GeneratorPreviewSection() {
             <div className="rounded-2xl border border-secondary-200 bg-white p-6 shadow-card">
               <h3 className="mb-4 text-sm font-semibold text-secondary-900">Choose a QR type</h3>
               <div className="grid grid-cols-4 gap-2">
-                {QR_TYPES.slice(0, 8).map((type) => (
+              {QR_TYPES.slice(0, 9).map((type) => (
                   <button
                     key={type.id}
                     onClick={() => setActiveType(type.id)}
@@ -49,7 +58,7 @@ export function GeneratorPreviewSection() {
                     }`}
                   >
                     <span className={`block text-xs font-semibold ${activeType === type.id ? 'text-primary-700' : 'text-secondary-600'}`}>
-                      {type.title}
+                    {type.id === 'instagram' ? 'Social Media' : type.title}
                     </span>
                   </button>
                 ))}
