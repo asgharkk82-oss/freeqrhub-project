@@ -64,7 +64,7 @@ export function ContactPage() {
                 </div>
                 <h3 className="mt-3 text-sm font-semibold text-secondary-900">Email</h3>
                 <p className="mt-1 text-sm text-secondary-500">
-  support@freeqrhub.com
+  freeqrhub2026@gmail.com
 </p>
               </div>
               <div className="rounded-2xl border border-secondary-200 bg-surface p-5">
