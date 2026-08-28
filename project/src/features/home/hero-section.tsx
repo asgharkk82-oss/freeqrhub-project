@@ -13,7 +13,7 @@ export function HeroSection() {
     <section className="relative overflow-x-hidden overflow-y-visible bg-gradient-hero isolate">
       <HeroBackground />
      <div className="container-base relative z-10 w-full max-w-full overflow-hidden px-5 py-16 sm:px-6 sm:py-20 lg:py-32 xl:py-40">
-        <div className="grid min-w-0 grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
+       <div className="grid min-w-0 grid-cols-1 items-center gap-10 lg:grid-cols-2 lg:gap-14">
           {/* Left: Copy */}
          <div className="order-1 min-w-0 max-w-full text-center lg:order-1 lg:text-left">
           <motion.div
@@ -131,13 +131,15 @@ Online in Seconds
   freeqrhub.com
 </span>
               </div>
-              <div className="relative mx-auto flex aspect-square w-full min-w-0 max-w-full items-center justify-center rounded-2xl bg-gradient-to-br from-slate-50 via-white to-primary-50 p-5 sm:p-8">
-                <LazyQrPreview
-                  content={DEMO_CONTENT}
-                  customization={DEFAULT_CUSTOMIZATION}
-                  className="h-full w-full"
-                />
-              </div>
+              <div className="relative mx-auto flex aspect-square w-full max-w-[420px] items-center justify-center rounded-2xl bg-gradient-to-br from-slate-50 via-white to-primary-50 p-6 sm:p-8">
+  <div className="flex h-full w-full items-center justify-center">
+    <LazyQrPreview
+      content={DEMO_CONTENT}
+      customization={DEFAULT_CUSTOMIZATION}
+      className="h-auto w-auto max-h-full max-w-full"
+    />
+  </div>
+</div>
               <div className="mt-5 flex flex-wrap justify-center gap-2">
   {['PNG', 'SVG', 'Print Ready'].map((item) => (
     <span
