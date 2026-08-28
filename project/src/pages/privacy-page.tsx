@@ -42,7 +42,7 @@ export function PrivacyPage() {
         {
           heading: 'Contact',
           body: [
-            'If you have questions about this privacy policy, please contact us at hello@freeqrhub.com.',
+           'If you have questions about this privacy policy, please contact us at freeqrhub2026@gmail.com.',
           ],
         },
       ]}
