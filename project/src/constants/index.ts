@@ -192,7 +192,7 @@ export const WHY_CHOOSE: Feature[] = [
   },
 ];
 export const HOW_IT_WORKS = [
-  { icon: 'ListChecks', title: 'Select QR Type', description: 'Choose from 8 QR code types.' },
+  { icon: 'ListChecks', title: 'Select QR Type', description: 'Choose from 17 QR code types.' },
   { icon: 'Keyboard', title: 'Enter Content', description: 'Fill in the details for your code.' },
   { icon: 'SlidersHorizontal', title: 'Customize', description: 'Style colors, dots and frames.' },
   { icon: 'Download', title: 'Download', description: 'Export in PNG, SVG or PDF.' },
