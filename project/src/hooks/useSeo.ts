@@ -41,34 +41,51 @@ export function useSeo({
   schema,
 }: SeoOptions) {
   useEffect(() => {
-    document.title = title ? `${title} | FreeQRHub` : DEFAULT_TITLE;
+    const fullTitle = title
+      ? title.endsWith('| FreeQRHub')
+        ? title
+        : `${title} | FreeQRHub`
+      : DEFAULT_TITLE;
+
+    document.title = fullTitle;
 
     const desc = description ?? DEFAULT_DESCRIPTION;
+
     setMeta('meta[name="description"]', 'content', desc);
+
     setMeta('meta[property="og:description"]', 'content', desc);
+
     setMeta('meta[name="twitter:description"]', 'content', desc);
 
-    const fullTitle = title ? `${title} | FreeQRHub` : DEFAULT_TITLE;
     setMeta('meta[property="og:title"]', 'content', fullTitle);
+
     setMeta('meta[name="twitter:title"]', 'content', fullTitle);
 
     if (canonical) {
-      setLink('canonical', canonical);
-      setMeta('meta[property="og:url"]', 'content', canonical);
+      const fullCanonical = canonical.startsWith('http')
+        ? canonical
+        : `https://freeqrhub-project.vercel.app${
+            canonical.startsWith('/') ? canonical : `/${canonical}`
+          }`;
+
+      setLink('canonical', fullCanonical);
+
+      setMeta('meta[property="og:url"]', 'content', fullCanonical);
     }
+
     if (schema) {
-  let script = document.getElementById(
-    'dynamic-schema'
-  ) as HTMLScriptElement | null;
+      let script = document.getElementById(
+        'dynamic-schema'
+      ) as HTMLScriptElement | null;
 
-  if (!script) {
-    script = document.createElement('script');
-    script.type = 'application/ld+json';
-    script.id = 'dynamic-schema';
-    document.head.appendChild(script);
-  }
+      if (!script) {
+        script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.id = 'dynamic-schema';
+        document.head.appendChild(script);
+      }
 
-  script.textContent = JSON.stringify(schema);
-}
+      script.textContent = JSON.stringify(schema);
+    }
   }, [title, description, canonical, schema]);
 }

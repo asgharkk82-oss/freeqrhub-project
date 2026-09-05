@@ -47,7 +47,15 @@ export default function App() {
 <Route path="/sms-qr-code-generator" element={<GeneratorPage />} />
 <Route path="/location-qr-code-generator" element={<GeneratorPage />} />
 <Route path="/text-qr-code-generator" element={<GeneratorPage />} />
-
+<Route path="/instagram-qr-code-generator" element={<GeneratorPage />} />
+<Route path="/facebook-qr-code-generator" element={<GeneratorPage />} />
+<Route path="/whatsapp-qr-code-generator" element={<GeneratorPage />} />
+<Route path="/youtube-qr-code-generator" element={<GeneratorPage />} />
+<Route path="/tiktok-qr-code-generator" element={<GeneratorPage />} />
+<Route path="/linkedin-qr-code-generator" element={<GeneratorPage />} />
+<Route path="/twitter-qr-code-generator" element={<GeneratorPage />} />
+<Route path="/pinterest-qr-code-generator" element={<GeneratorPage />} />
+<Route path="/payment-qr-code-generator" element={<GeneratorPage />} />
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/blog" element={<BlogPage />} />
                 <Route path="/blog/:slug" element={<BlogPostPage />} />
